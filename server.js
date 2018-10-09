@@ -71,7 +71,11 @@ function gateKeeper(req, res, next) {
   const userpass = req.get('x-username-and-password');
   const parsedString = queryString.parse(userpass);
   console.log(parsedString);
+  const user = parsedString.user || null;
+  const pass = parsedString.pass || null;
   
+
+
   next();
 }
 
